@@ -6,7 +6,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     }
     otherSprite.destroy()
     info.setScore(sprite.width)
-    if (info.score() >= 32) {
+    if (info.score() >= 64) {
         game.over(true)
     }
 })
