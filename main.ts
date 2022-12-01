@@ -1,12 +1,13 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     if (sprite.width >= otherSprite.width) {
         mySprite.changeScale(0.2, ScaleAnchor.Middle)
+        music.smallCrash.play()
     } else {
         mySprite.setScale(1, ScaleAnchor.Middle)
+        music.bigCrash.play()
     }
     otherSprite.destroy()
-    info.setScore(sprite.width)
-    if (info.score() >= 64) {
+    if (sprite.width >= 64) {
         game.over(true)
     }
 })
